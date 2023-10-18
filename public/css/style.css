@@ -2,6 +2,7 @@ body {
   background-color: rgb(44, 48, 66);
   color: white;
   text-align: center;
+  padding-top: 50px;
 }
 
 button {
@@ -18,10 +19,6 @@ button {
   font-weight: bold;
 }
 
-button:hover {
-  background-color: #620707;
-}
-
 .button-style {
   display: inline-block;
   padding: 14px 20px;
@@ -36,6 +33,37 @@ button:hover {
   font-weight: bold;
 }
 
-.button-style:hover {
+button:hover, .button-style:hover {
   background-color: #620707;
+}
+
+h1 { 
+  font-size: 2.5em; 
+  margin-bottom: 20px;
+}
+
+h2 { 
+  font-size: 1.5em;
+  margin: 20px 0;
+}
+
+#workoutList {
+  border: 5px solid #ae0c0c;
+  max-width: 290px;
+  max-height: 390px;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  overflow: auto;
+}
+
+#workoutList a:hover{
+  background-color: #620707;
+}
+
+#workoutList a{
+  color:#ae0c0c;
+  text-decoration: none;
+  font-size: 18px;
+  text-align: center;
 }

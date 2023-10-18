@@ -11,7 +11,7 @@ export default class createWorkoutController {
   createWorkoutPost(req, res, next) {
     const workoutName = this.#getWorkoutName(req);
     this.gymLibrary.createWorkout(workoutName);
-    this.#redirectToHome(res);
+    this.#redirectToHomePage(res);
   }
 
   #getWorkoutName(req) {
@@ -19,7 +19,7 @@ export default class createWorkoutController {
     return workoutName;
   }
 
-  #redirectToHome(res) {
+  #redirectToHomePage(res) {
     res.redirect("/");
   }
 }

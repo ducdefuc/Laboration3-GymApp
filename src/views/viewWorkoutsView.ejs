@@ -10,19 +10,13 @@
 
 <body>
   <h1>View a Workout</h1>
-  <p>Here are your existing Workouts</p>
+  <h2>Here are your existing Workouts</h2>
   <div id="workoutList">
-    <% if (workouts && workouts.length) { %>
-      <ul>
-        <% workouts.forEach(workout=> { %>
-          <li>
-            <%= workout.name %>
-          </li>
-          <% }); %>
-      </ul>
-      <% } else { %>
-        <p>You don't have any workouts yet!</p>
-        <% } %>
+    <% workouts.forEach(workout=> { %>
+      <h2><a href="/viewWorkouts/workout/<%= workout %>">
+          <%= workout %>
+        </a></h2>
+      <% }); %>
   </div>
 
   <a href="/" id="backToHomeButton" class="button-style">Back to home</a>

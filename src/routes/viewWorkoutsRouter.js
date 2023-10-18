@@ -10,6 +10,7 @@ export default class viewWorkoutsRouter {
 
   #setupRoutes() {
     this.router.get('/', (req, res, next) => this.controller.renderPage(req, res, next));
+    this.router.get('/workout/:name', (req, res, next) => this.controller.renderWorkoutDetails(req, res, next));
   }
 
   getRouter() {
