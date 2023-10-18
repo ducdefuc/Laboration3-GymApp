@@ -11,9 +11,9 @@
 <body>
   <h1>Create a Workout</h1>
   <p>What do you want to call this workout?</p>
-  <form id="createWorkoutForm">
-    <input type="text" id="createWorkoutName" name="workoutName" placeholder="Workout Name">
-    <input type="submit" value="Submit">
+  <form method="POST" action="/createWorkout/create">
+    <input type="text" id="createWorkoutName" name="workoutName" placeholder="Workout Name"> <br>
+    <button type="submit">Create Workout</button>
   </form>
   <p id="eventUpdateLabel"></p>
 

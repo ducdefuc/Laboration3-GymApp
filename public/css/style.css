@@ -4,10 +4,10 @@ body {
   text-align: center;
 }
 
-.button-style {
+button {
   display: inline-block;
-  padding: 20px 20px;
-  margin: 15px;
+  padding: 14px 20px;
+  margin: 10px;
   background-color: #ae0c0c;
   border: none;
   border-radius: 10px;
@@ -15,6 +15,25 @@ body {
   text-decoration: none;
   cursor: pointer;
   transition: background-color 0.3s;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #620707;
+}
+
+.button-style {
+  display: inline-block;
+  padding: 14px 20px;
+  margin: 10px;
+  background-color: #ae0c0c;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: bold;
 }
 
 .button-style:hover {

@@ -12,6 +12,8 @@ try {
   app.set('view engine', 'ejs');
   app.set('views', join(directoryFullName, 'views'));
 
+  app.use(express.urlencoded({ extended: false }));
+  
   app.use(express.static(join(directoryFullName, '..', 'public')));
   app.use('/', router);
 
