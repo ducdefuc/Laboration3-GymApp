@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Workouts</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <h1>View a Workout</h1>
+  <p>Here are your existing Workouts</p>
+  <div id="workoutList">
+    <% if (workouts && workouts.length) { %>
+      <ul>
+        <% workouts.forEach(workout=> { %>
+          <li>
+            <%= workout.name %>
+          </li>
+          <% }); %>
+      </ul>
+      <% } else { %>
+        <p>You don't have any workouts yet!</p>
+        <% } %>
+  </div>
+
+  <a href="/" id="backToHomeButton" class="button-style">Back to home</a>
+</body>
+
+</html>

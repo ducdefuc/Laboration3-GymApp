@@ -1,8 +1,18 @@
 import express from 'express'
-import { homeController } from '../controllers/homeController.js'
+import homeController from '../controllers/homeController.js'
 
-export const router = express.Router()
+export default class homeRouter {
+  constructor() {
+    this.router = express.Router();
+    this.controller = new homeController();
+    this.#setupRoutes();
+  }
 
-const controller = new homeController()
+  #setupRoutes() {
+    this.router.get('/', (req, res, next) => this.controller.renderPage(req, res, next));
+  }
 
-router.get('/', (req, res, next) => controller.index(req, res, next))
+  getRouter() {
+    return this.router;
+  }
+}

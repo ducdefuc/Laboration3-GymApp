@@ -1,12 +1,10 @@
-import GymLibrary from '../../L2-GymLibrary/src/GymLibrary.js';
+export default class createWorkoutController {
 
-export class createWorkoutController {
-
-  constructor() {
-    this.gymLibrary = new GymLibrary();
+  constructor(gymLibrary) {
+    this.gymLibrary = gymLibrary;
   }
 
-  index(req, res, next) {
+  renderPage(req, res, next) {
     res.render("createWorkoutView");
   }
 
