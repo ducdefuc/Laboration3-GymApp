@@ -4,13 +4,19 @@ body {
   text-align: center;
 }
 
-button {
+.button-style {
+  display: inline-block;
+  padding: 20px 20px;
+  margin: 15px;
   background-color: #ae0c0c;
-  color: white;
-  padding: 14px 20px;
-  margin: 10px;
   border: none;
   border-radius: 10px;
+  color: white;
+  text-decoration: none;
   cursor: pointer;
-  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.button-style:hover {
+  background-color: #620707;
 }
