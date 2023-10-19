@@ -12,7 +12,7 @@
 
 <body>
   <h1>
-    <%= workout.name %>
+    Showing Workout: <%= workout.name %>
   </h1>
 
   <% workout.exercises.forEach(function(exercise) { %>
@@ -33,8 +33,8 @@
     </div>
     <% }) %>
 
-      <a href="/listWorkouts/workout/<%= workout.name %>/editWorkout" id="editWorkoutButton" class="button-style">Edit Workout</a> <br>
-      <a href="/viewWorkouts" id="backToWorkoutsButton" class="button-style">Back to Workouts</a>
+      <a href="/editWorkout/<%= workout.name %>" id="editWorkoutButton" class="button-style">Edit Workout</a> <br>
+      <a href="/listWorkouts" id="backToWorkoutsButton" class="button-style">Back to Workouts</a>
 </body>
 
 </html>

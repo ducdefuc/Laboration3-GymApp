@@ -13,7 +13,7 @@
   <h2>Here are your existing Workouts</h2>
   <div id="workoutList">
     <% workouts.forEach(workout=> { %>
-      <h2><a href="/listWorkouts/workout/<%= workout %>">
+      <h2><a href="/listWorkouts/<%= workout %>">
           <%= workout %>
         </a></h2>
       <% }); %>
