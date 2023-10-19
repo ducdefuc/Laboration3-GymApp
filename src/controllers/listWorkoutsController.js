@@ -9,10 +9,10 @@ export default class listWorkoutsController {
     res.render("listWorkoutsView", { workouts });
   }
 
-  renderWorkoutDetails(req, res, next) {
+  renderWorkoutInformation(req, res, next) {
     const workoutName = req.params.name;
 
-    const workoutDetails = this.gymLibrary.getWorkout(workoutName);
-    res.render("workoutDetailsView", { workout: workoutDetails });
+    const workoutInformation = this.gymLibrary.getWorkout(workoutName);
+    res.render("workoutInformationView", { workout: workoutInformation });
   }
 }
