@@ -15,18 +15,21 @@
     Showing Workout: <%= workout.name %>
   </h1>
 
-  <% workout.exercises.forEach(function(exercise) { %>
-    <div class="exercise">
+  <% workout.exercises.forEach(function(exercise, index) { %>
+    <div class="exerciseContainer">
+      <h3>Exercise <%= index + 1 %>:</h3>
       <h2>
         <%= exercise.name %>
       </h2>
+
       <% exercise.warmupSets.forEach(function(set) { %>
-        <div>
+        <div class="set">
           <%= set %>
         </div>
         <% }) %>
+
           <% exercise.workingSets.forEach(function(set) { %>
-            <div>
+            <div class="set">
               <%= set %>
             </div>
             <% }) %>

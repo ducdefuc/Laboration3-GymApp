@@ -11,9 +11,33 @@
 </head>
 
 <body>
-  <h1>Editing Workout: <%= workout.name %>
+  <h1>
+    Showing Workout: <%= workout.name %>
   </h1>
-  <a href="/listWorkouts" id="backToWorkoutsButton" class="button-style">Back to Workouts</a>
+
+  <% workout.exercises.forEach(function(exercise, index) { %>
+    <div class="exerciseContainer">
+      <h3>Exercise <%= index + 1 %>:</h3>
+      <h2>
+        <%= exercise.name %>
+      </h2>
+
+      <% exercise.warmupSets.forEach(function(set) { %>
+        <div class="set">
+          <%= set %>
+        </div>
+        <% }) %>
+
+          <% exercise.workingSets.forEach(function(set) { %>
+            <div class="set">
+              <%= set %>
+            </div>
+            <% }) %>
+    </div>
+    <% }) %>
+      <a href="/addExercise/<%= workout.name %>" id="addExerciseButton" class="button-style">Add Exercise</a>
+      <a href="removeExercise/<%= workout.name %>" id="removeExerciseButton" class="button-style">Remove Exercise</a> <br>
+      <a href="/listWorkouts" id="backToWorkoutsButton" class="button-style">Back to Workouts</a>
 </body>
 
 </html>

@@ -33,18 +33,17 @@ button {
   font-weight: bold;
 }
 
-button:hover, .button-style:hover {
+button:hover,
+.button-style:hover {
   background-color: #620707;
 }
 
-h1 { 
-  font-size: 2.5em; 
-  margin-bottom: 20px;
+h1 {
+  font-size: 2.5em;
 }
 
-h2 { 
+h2 {
   font-size: 1.5em;
-  margin: 20px 0;
 }
 
 #workoutList {
@@ -57,13 +56,32 @@ h2 {
   overflow: auto;
 }
 
-#workoutList a:hover{
+#workoutList a:hover {
   background-color: #620707;
 }
 
-#workoutList a{
-  color:#ae0c0c;
+#workoutList a {
+  color: white;
   text-decoration: none;
   font-size: 18px;
   text-align: center;
+}
+
+.exerciseContainer {
+  width: 300px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 10px;
+  margin: auto;
+  padding: 15px;
+}
+
+.set {
+  padding: 5px 0;
+}
+
+h3 {
+  font-weight: normal;
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #777;
 }

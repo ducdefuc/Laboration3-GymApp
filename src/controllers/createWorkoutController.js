@@ -15,6 +15,7 @@ export default class createWorkoutController {
     this.gymLibrary.addExerciseToWorkout(workoutName, pushups);
     pushups.addWarmupSet(10, 10);
     pushups.addWorkingSet(20, 10);
+    pushups.addWorkingSet(20, 10);
     console.log(this.gymLibrary.getWorkout(workoutName));
     this.#redirectToHomePage(res);
   }
