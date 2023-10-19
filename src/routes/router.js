@@ -1,7 +1,7 @@
 import express from 'express';
 import homeRouter from './homeRouter.js';
 import createWorkoutRouter from './createWorkoutRouter.js';
-import viewWorkoutsRouter from './viewWorkoutsRouter.js';
+import listWorkoutsRouter from './listWorkoutsRouter.js';
 
 export default class router {
   constructor(gymLibrary) {
@@ -12,11 +12,11 @@ export default class router {
   #setupRoutes(gymLibrary) {
     const homeRouterInstance = new homeRouter().getRouter();
     const createWorkoutRouterInstance = new createWorkoutRouter(gymLibrary).getRouter();
-    const viewWorkoutsRouterInstance = new viewWorkoutsRouter(gymLibrary).getRouter();
+    const listWorkoutsRouterInstance = new listWorkoutsRouter(gymLibrary).getRouter();
 
     this.router.use('/', homeRouterInstance);
     this.router.use('/createWorkout', createWorkoutRouterInstance);
-    this.router.use('/viewWorkouts', viewWorkoutsRouterInstance);
+    this.router.use('/listWorkouts', listWorkoutsRouterInstance);
   }
 
   getRouter() {

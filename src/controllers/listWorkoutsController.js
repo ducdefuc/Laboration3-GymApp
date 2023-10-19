@@ -1,4 +1,4 @@
-export default class viewWorkoutsController {
+export default class listWorkoutsController {
 
   constructor(gymLibrary) {
     this.gymLibrary = gymLibrary;
@@ -6,7 +6,7 @@ export default class viewWorkoutsController {
 
   renderPage(req, res, next) {
     const workouts = this.gymLibrary.listAllWorkouts();
-    res.render("viewWorkoutsView", { workouts });
+    res.render("listWorkoutsView", { workouts });
   }
 
   renderWorkoutDetails(req, res, next) {
