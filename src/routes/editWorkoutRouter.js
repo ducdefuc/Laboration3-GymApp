@@ -9,8 +9,10 @@ export default class editWorkoutRouter {
   }
 
   #setupRoutes() {
-    this.router.get('/:name', (req, res, next) => this.controller.renderPage(req, res, next));
-    this.router.post('/:name', (req, res, next) => this.controller.editWorkoutPost(req, res, next));
+    this.router.get('/:name', (req, res, next) => this.controller.renderEditPage(req, res, next));
+
+    this.router.get('/addExercise/:name', (req, res, next) => this.controller.renderAddExercisePage(req, res, next));
+    this.router.post('/addExercise/:name', (req, res, next) => this.controller.addExerciseToWorkoutPost(req, res, next));
   }
 
   getRouter() {

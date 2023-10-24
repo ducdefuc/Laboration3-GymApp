@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    <%= workout.name %>
+  </title>
+  <script src="/js/exerciseHandler.js"></script>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <h1>
+    Adding exercise to: <%= workout.name %>
+  </h1>
+
+  <form action="/editWorkout/addExercise/<%= workout.name %>" method="POST">
+    <div>
+      <label for="exerciseName">Exercise Name:</label>
+      <input type="text" id="exerciseName" name="exerciseName" required>
+    </div>
+
+    <div>
+      <select id="setType">
+        <option value="warmupSet">Warmup Set</option>
+        <option value="workingSet">Working Set</option>
+      </select>
+      Weight: <input type="number" id="setWeight" placeholder="Enter weight" required> kg
+      Reps: <input type="number" id="setReps" placeholder="Enter reps" required> reps
+      <button type="button" id="addSetButton">Add Set</button>
+    </div>
+
+    <div id="warmupSets"></div>
+    <div id="workingSets"></div>
+
+    <div>
+      <button type="submit" id="addExerciseButton">Add Exercise</button>
+    </div>
+  </form>
+
+  <a href="/editWorkout/<%= workout.name %>" id="backToEditWorkoutButton" class="button-style">Back to edit workout</a>
+</body>
+
+</html>
