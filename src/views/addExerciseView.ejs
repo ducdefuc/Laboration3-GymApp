@@ -19,16 +19,17 @@
   <form action="/editWorkout/addExercise/<%= workout.name %>" method="POST">
     <div>
       <label for="exerciseName">Exercise Name:</label>
-      <input type="text" id="exerciseName" name="exerciseName" required>
+      <input type="text" id="exerciseName" name="exerciseName" placeholder="Enter Name" required>
     </div>
 
     <div>
+      <label> Type of set</label>
       <select id="setType">
         <option value="warmupSet">Warmup Set</option>
         <option value="workingSet">Working Set</option>
       </select>
-      Weight: <input type="number" id="setWeight" placeholder="Enter weight" required> kg
-      Reps: <input type="number" id="setReps" placeholder="Enter reps" required> reps
+      <label>Weight: kg</label> <input type="number" id="setWeight" placeholder="Enter weight" required>
+      <label>Reps:</label> <input type="number" id="setReps" placeholder="Enter reps" required>
       <button type="button" id="addSetButton">Add Set</button>
     </div>
 
