@@ -33,10 +33,12 @@
               <%= set %>
             </div>
             <% }) %>
+
+              <a href="removeExercise/<%= workout.name %>/<%= exercise.name %>" id="removeExerciseButton"
+                class="button-style">Remove Exercise</a>
     </div>
     <% }) %>
       <a href="addExercise/<%= workout.name %>" id="addExerciseButton" class="button-style">Add Exercise</a>
-      <a href="removeExercise/<%= workout.name %>" id="removeExerciseButton" class="button-style">Remove Exercise</a>
       <br>
       <a href="/listWorkouts" id="backToWorkoutsButton" class="button-style">Back to Workouts</a>
 </body>

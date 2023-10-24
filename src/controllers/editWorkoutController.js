@@ -12,6 +12,13 @@ export default class editWorkoutController {
     this.#renderPage(req, res, "addExerciseView");
   }
 
+  renderRemoveExercisePage(req, res) {
+    const workout = this.#getWorkoutFromName(req.params.name);
+    const exerciseName = req.params.exerciseName;
+    const exercise = workout.exercises.find(exercise => exercise.name === exerciseName);
+    res.render("removeExerciseView", { workout, exercise, gymLibrary: this.gymLibrary });
+  }
+
   #renderPage(req, res, viewName) {
     const workout = this.#getWorkoutFromName(req.params.name);
     res.render(viewName, { workout, gymLibrary: this.gymLibrary });
@@ -19,6 +26,13 @@ export default class editWorkoutController {
 
   #getWorkoutFromName(workoutName) {
     return this.gymLibrary.getWorkout(workoutName);
+  }
+
+  removeExercisePost(req, res) {
+    const workoutName = req.params.name;
+    const exerciseName = req.body.exerciseName;
+    this.gymLibrary.removeExerciseFromWorkout(workoutName, exerciseName);
+    res.redirect(`/editWorkout/${workoutName}`);
   }
 
   addExerciseToWorkoutPost(req, res) {
