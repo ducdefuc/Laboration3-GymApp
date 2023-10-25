@@ -1,10 +1,10 @@
 import express from 'express';
-import listWorkoutsController from '../controllers/listWorkoutsController.js';
+import listAllWorkoutsController from '../controllers/listAllWorkoutsController.js';
 
-export default class listWorkoutsRouter {
+export default class listAllWorkoutsRouter {
   constructor(gymLibrary) {
     this.router = express.Router();
-    this.controller = new listWorkoutsController(gymLibrary);
+    this.controller = new listAllWorkoutsController(gymLibrary);
     this.#setupRoutes();
   }
 
