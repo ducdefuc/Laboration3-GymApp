@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Confirm Delete </title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <p>Are you sure you want to delete the following workout?</p>
+  <h2>
+    <%= workout.name %>
+  </h2>
+
+  <form action="/deleteWorkout/<%= workout.name %>" method="POST">
+    <input type="hidden" name="workoutName" value="<%= workout.name  %>">
+    <button type="submit">Confirm Deletion</button>
+  </form>
+
+  <a href="/listWorkouts/<%= workout.name %>" id="backToWorkoutButton" class="button-style">Cancel</a>
+</body>
+
+</html>
