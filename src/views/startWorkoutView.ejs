@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Workouts</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <h1>Choose a workout to start:</h1>
+  <h2>Here are your existing Workouts</h2>
+  <div id="workoutList">
+    <% workouts.forEach(workout=> { %>
+      <h2><a href="/listAllWorkouts/<%= workout %>">
+          <%= workout %>
+        </a></h2>
+      <% }); %>
+  </div>
+
+  <a href="/" id="backToHomeButton" class="button-style">Back to home</a>
+</body>
+
+</html>

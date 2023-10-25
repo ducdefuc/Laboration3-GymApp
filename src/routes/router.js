@@ -4,6 +4,7 @@ import createWorkoutRouter from './createWorkoutRouter.js';
 import listAllWorkoutsRouter from './listAllWorkoutsRouter.js';
 import editWorkoutRouter from './editWorkoutRouter.js';
 import deleteWorkoutRouter from './deleteWorkoutRouter.js';
+import startWorkoutRouter from './startWorkoutRouter.js';
 
 export default class router {
   constructor(gymLibrary) {
@@ -17,12 +18,14 @@ export default class router {
     const listAllWorkoutsRouterInstance = new listAllWorkoutsRouter(gymLibrary).getRouter();
     const editWorkoutRouterInstance = new editWorkoutRouter(gymLibrary).getRouter();
     const deleteWorkoutRouterInstance = new deleteWorkoutRouter(gymLibrary).getRouter();
+    const startWorkoutRouterInstance = new startWorkoutRouter(gymLibrary).getRouter();
 
     this.router.use('/', homeRouterInstance);
     this.router.use('/createWorkout', createWorkoutRouterInstance);
     this.router.use('/editWorkout', editWorkoutRouterInstance);
     this.router.use('/listAllWorkouts', listAllWorkoutsRouterInstance);
     this.router.use('/deleteWorkout', deleteWorkoutRouterInstance);
+    this.router.use('/startWorkout', startWorkoutRouterInstance);
   }
 
   getRouter() {
