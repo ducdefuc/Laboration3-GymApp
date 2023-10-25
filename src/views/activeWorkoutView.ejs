@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    <%= workout.name %>
+  </title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/timer.js"></script>
+</head>
+
+<body>
+  <h1>
+    Active Workout: <%= workout.name %>
+  </h1>
+
+  <div id="timer">
+    <h2>You have been working out for:</h2>
+    <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
+  </div>
+
+
+  <% workout.exercises.forEach(function(exercise, index) { %>
+    <div class="exerciseContainer">
+      <h3>Exercise <%= index + 1 %>:</h3>
+      <h2>
+        <%= exercise.name %>
+      </h2>
+
+      <% exercise.warmupSets.forEach(function(set) { %>
+        <div class="set">
+          <%= set %>
+        </div>
+        <% }) %>
+
+          <% exercise.workingSets.forEach(function(set) { %>
+            <div class="set">
+              <%= set %>
+            </div>
+            <% }) %>
+    </div>
+    <% }) %>
+
+      <a href="/" id="backToHomeButton" class="button-style">Back to home</a>
+</body>
+
+</html>
