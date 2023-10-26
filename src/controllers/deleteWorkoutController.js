@@ -4,19 +4,19 @@ export default class deleteWorkoutController {
     this.gymLibrary = gymLibrary;
   }
 
-  renderPage(req, res, next) {
-    const workoutName = this.#getWorkoutName(req);
+  renderDeletePage(req, res, next) {
+    const workoutName = this.#getWorkoutNameFromRequest(req);
     const workout = this.gymLibrary.getWorkout(workoutName);
     res.render("deleteWorkoutView", {workout});
   }
 
   deleteWorkoutPost(req, res, next) {
-    const workoutName = this.#getWorkoutName(req);
+    const workoutName = this.#getWorkoutNameFromRequest(req);
     this.gymLibrary.removeWorkout(workoutName);
     this.#redirectToWorkoutsList(res);
   }
 
-  #getWorkoutName(req) {
+  #getWorkoutNameFromRequest(req) {
     return req.params.name;
   }
 

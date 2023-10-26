@@ -9,7 +9,7 @@ export default class deleteWorkoutRouter {
   }
 
   #setupRoutes() {
-    this.router.get('/:name', (req, res, next) => this.controller.renderPage(req, res, next));
+    this.router.get('/:name', (req, res, next) => this.controller.renderDeletePage(req, res, next));
     this.router.post('/:name', (req, res, next) => this.controller.deleteWorkoutPost(req, res, next));
   }
 
