@@ -1,6 +1,6 @@
 class ExerciseHandler {
   constructor() {
-    this.addSetButton = document.getElementById('addSetButton');
+    this.addSetButtonElement = document.getElementById('addSetButton');
     this.setTypeElement = document.getElementById('setType');
     this.setWeightElement = document.getElementById('setWeight');
     this.setRepsElement = document.getElementById('setReps');
@@ -8,7 +8,41 @@ class ExerciseHandler {
   }
 
   #addEventListeners() {
-    this.addSetButton.addEventListener('click', (event) => this.#addSetToExercise(event));
+    this.addSetButtonElement.addEventListener('click', (event) => this.#handleAddSetClick(event));
+  }
+
+  #handleAddSetClick(event) {
+    event.preventDefault();
+
+    const setType = this.setTypeElement.value;
+    const weight = parseFloat(this.setWeightElement.value);
+    const reps = parseInt(this.setRepsElement.value);
+
+    if (this.#isValidInput(weight, reps)) {
+      const setDiv = this.#createSetDiv(setType, weight, reps);
+      this.#appendToTargetDiv(setType, setDiv);
+    }
+  }
+
+  #isValidInput(weight, reps) {
+    return !isNaN(weight) && weight >= 0 && !isNaN(reps) && reps >= 1;
+  }
+
+  #createSetDiv(setType, weight, reps) {
+    const div = document.createElement('div');
+    div.textContent = `${setType}: ${weight}kg: ${reps}reps`;
+
+    div.appendChild(this.#createHiddenInput('setTypes', setType));
+    div.appendChild(this.#createHiddenInput('weights', weight));
+    div.appendChild(this.#createHiddenInput('reps', reps));
+
+    return div;
+  }
+
+  #appendToTargetDiv(setType, setDiv) {
+    const targetDivId = setType === 'warmupSet' ? 'warmupSets' : 'workingSets';
+    const targetDiv = document.getElementById(targetDivId);
+    targetDiv.appendChild(setDiv);
   }
 
   #createHiddenInput(name, value) {
@@ -17,28 +51,6 @@ class ExerciseHandler {
     input.name = name;
     input.value = value;
     return input;
-  }
-
-  #addSetToExercise(event) {
-    event.preventDefault();
-
-    const setType = this.setTypeElement.value;
-    const weight = parseFloat(this.setWeightElement.value);
-    const reps = parseInt(this.setRepsElement.value);
-
-    const div = document.createElement('div');
-    if (isNaN(weight) || weight < 0 || isNaN(reps) || reps < 1) {
-      return;
-    } else {
-      div.textContent = `${setType}: ${weight}kg: ${reps}reps`;
-    }
-
-    div.appendChild(this.#createHiddenInput('setTypes', setType));
-    div.appendChild(this.#createHiddenInput('weights', weight));
-    div.appendChild(this.#createHiddenInput('reps', reps));
-
-    const targetDiv = setType === 'warmupSet' ? 'warmupSets' : 'workingSets';
-    document.getElementById(targetDiv).appendChild(div);
   }
 }
 
