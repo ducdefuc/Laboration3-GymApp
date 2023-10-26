@@ -17,6 +17,7 @@ try {
   app.use(express.urlencoded({ extended: false }));
 
   app.use(express.static(join(directoryFullName, '..', 'public')));
+  app.use('/L2-GymLibrary', express.static(join(directoryFullName, '..', 'L2-GymLibrary', 'src')));
 
   const gymLibrary = new GymLibrary();
   const mainRouter = new router(gymLibrary).getRouter();

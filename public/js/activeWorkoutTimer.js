@@ -1,4 +1,4 @@
-class Timer {
+class ActiveWorkoutTimer {
   constructor() {
     this.hours = 0;
     this.minutes = 0;
@@ -6,6 +6,7 @@ class Timer {
     this.hoursSpan = document.getElementById('hours');
     this.minutesSpan = document.getElementById('minutes');
     this.secondsSpan = document.getElementById('seconds');
+    this.timerControl = document.getElementById('timerControl');
     this.#startTimer();
   }
 
@@ -39,5 +40,5 @@ class Timer {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  new Timer();
+  new ActiveWorkoutTimer();
 });

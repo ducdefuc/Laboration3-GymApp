@@ -8,7 +8,8 @@
     <%= workout.name %>
   </title>
   <link rel="stylesheet" href="/css/style.css">
-  <script src="/js/timer.js"></script>
+  <script src="/js/activeWorkoutTimer.js"></script>
+  <script type="module" src="/js/restTimer.js"></script>
 </head>
 
 <body>
@@ -20,7 +21,6 @@
     <h2>You have been working out for:</h2>
     <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
   </div>
-
 
   <% workout.exercises.forEach(function(exercise, index) { %>
     <div class="exerciseContainer">
@@ -44,6 +44,13 @@
     <% }) %>
 
       <a href="/" id="backToHomeButton" class="button-style">Back to home</a>
+
+      <div id="restTimerContainer">
+        <h2>Rest Timer:</h2>
+        <button id="timerReset">Reset</button>
+        <span id="restMinutes">00</span>:<span id="restSeconds">00</span>
+        <button id="timerControl">Start</button>
+      </div>
 </body>
 
 </html>
