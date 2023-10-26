@@ -1,22 +1,28 @@
 class ExerciseHandler {
+
+  #addSetButtonElement;
+  #setTypeElement;
+  #setWeightElement;
+  #setRepsElement;
+
   constructor() {
-    this.addSetButtonElement = document.getElementById('addSetButton');
-    this.setTypeElement = document.getElementById('setType');
-    this.setWeightElement = document.getElementById('setWeight');
-    this.setRepsElement = document.getElementById('setReps');
+    this.#addSetButtonElement = document.getElementById('addSetButton');
+    this.#setTypeElement = document.getElementById('setType');
+    this.#setWeightElement = document.getElementById('setWeight');
+    this.#setRepsElement = document.getElementById('setReps');
     this.#addEventListeners();
   }
 
   #addEventListeners() {
-    this.addSetButtonElement.addEventListener('click', (event) => this.#handleAddSetClick(event));
+    this.#addSetButtonElement.addEventListener('click', (event) => this.#handleAddSetClick(event));
   }
 
   #handleAddSetClick(event) {
     event.preventDefault();
 
-    const setType = this.setTypeElement.value;
-    const weight = parseFloat(this.setWeightElement.value);
-    const reps = parseInt(this.setRepsElement.value);
+    const setType = this.#setTypeElement.value;
+    const weight = parseFloat(this.#setWeightElement.value);
+    const reps = parseInt(this.#setRepsElement.value);
 
     if (this.#isValidInput(weight, reps)) {
       const setDiv = this.#createSetDiv(setType, weight, reps);
