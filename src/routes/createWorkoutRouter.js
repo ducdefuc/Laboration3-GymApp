@@ -9,7 +9,7 @@ export default class createWorkoutRouter {
   }
 
   #setupRoutes() {
-    this.router.get('/', (req, res, next) => this.controller.renderPage(req, res, next));
+    this.router.get('/', (req, res, next) => this.controller.renderCreateWorkoutPage(req, res, next));
     this.router.post('/create', (req, res, next) => this.controller.createWorkoutPost(req, res, next));
   }
 

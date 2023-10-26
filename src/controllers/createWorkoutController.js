@@ -4,7 +4,7 @@ export default class createWorkoutController {
     this.gymLibrary = gymLibrary;
   }
 
-  renderPage(req, res, next) {
+  renderCreateWorkoutPage(req, res, next) {
     res.render("createWorkoutView");
   }
 
