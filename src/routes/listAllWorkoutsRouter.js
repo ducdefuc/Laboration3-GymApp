@@ -9,8 +9,8 @@ export default class listAllWorkoutsRouter {
   }
 
   #setupRoutes() {
-    this.router.get('/', (req, res, next) => this.controller.renderPage(req, res, next));
-    this.router.get('/:name', (req, res, next) => this.controller.renderWorkoutInformation(req, res, next));
+    this.router.get('/', (req, res, next) => this.controller.renderPageWithAllWorkouts(req, res, next));
+    this.router.get('/:name', (req, res, next) => this.controller.renderPageWithWorkoutInformation(req, res, next));
   }
 
   getRouter() {

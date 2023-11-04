@@ -9,7 +9,7 @@ export default class startWorkoutRouter {
   }
 
   #setupRoutes() {
-    this.router.get('/', (req, res, next) => this.controller.renderPage(req, res, next));
+    this.router.get('/', (req, res, next) => this.controller.renderStartWorkoutPage(req, res, next));
 
     this.router.get('/activeWorkout/:name', (req, res, next) => this.controller.renderActiveWorkoutPage(req, res, next));
   }

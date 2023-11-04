@@ -1,6 +1,6 @@
 export default class homeController {
 
-  renderPage(req, res, next) {
+  renderHomePage(req, res, next) {
     res.render('homeView');
   }
 }

@@ -9,7 +9,7 @@ export default class homeRouter {
   }
 
   #setupRoutes() {
-    this.router.get('/', (req, res, next) => this.controller.renderPage(req, res, next));
+    this.router.get('/', (req, res, next) => this.controller.renderHomePage(req, res, next));
   }
 
   getRouter() {

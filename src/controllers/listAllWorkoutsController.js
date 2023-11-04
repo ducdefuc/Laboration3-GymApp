@@ -4,14 +4,13 @@ export default class listAllWorkoutsController {
     this.gymLibrary = gymLibrary;
   }
 
-  renderPage(req, res, next) {
+  renderPageWithAllWorkouts(req, res, next) {
     const workouts = this.gymLibrary.listAllWorkouts();
     res.render("listAllWorkoutsView", { workouts });
   }
 
-  renderWorkoutInformation(req, res, next) {
+  renderPageWithWorkoutInformation(req, res, next) {
     const workoutName = req.params.name;
-
     const workoutInformation = this.gymLibrary.getWorkout(workoutName);
     res.render("workoutInformationView", { workout: workoutInformation });
   }
