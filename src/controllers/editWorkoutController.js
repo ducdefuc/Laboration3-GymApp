@@ -32,37 +32,52 @@ export default class editWorkoutController {
     const workoutName = req.params.name;
     const exerciseName = req.body.exerciseName;
     this.gymLibrary.removeExerciseFromWorkout(workoutName, exerciseName);
-    res.redirect(`/editWorkout/${workoutName}`);
+    this.#redirectToEditPage(res, workoutName);
   }
 
   addExerciseToWorkoutPost(req, res) {
     const workoutName = req.params.name;
     const exercise = this.#createExerciseFromRequest(req)
     this.gymLibrary.addExerciseToWorkout(workoutName, exercise);
+    this.#redirectToEditPage(res, workoutName);
+  }
+
+  #redirectToEditPage(res, workoutName) {
     res.redirect(`/editWorkout/${workoutName}`);
   }
 
   #createExerciseFromRequest(req) {
     const exerciseName = req.body.exerciseName;
     const exercise = this.gymLibrary.createExercise(exerciseName);
-    // Make sure that the request body is an array, to handle single and multiple sets.
-    const exerciseSetTypes = Array.isArray(req.body['setTypes']) ? req.body['setTypes'] : [req.body['setTypes']];
-    const exerciseWeights = Array.isArray(req.body['weights']) ? req.body['weights'] : [req.body['weights']];
-    const exerciseReps = Array.isArray(req.body['reps']) ? req.body['reps'] : [req.body['reps']];
+    const sets = this.#extractSetsFromRequest(req);
 
-    for (let i = 0; i < exerciseSetTypes.length; i++) {
-      const setType = exerciseSetTypes[i];
-      const weight = parseFloat(exerciseWeights[i]);
-      const reps = parseInt(exerciseReps[i]);
-
-      if (setType === 'warmupSet') {
-        exercise.addWarmupSet(reps, weight);
+    sets.forEach(set => {
+      if (set.type === 'warmupSet') {
+        exercise.addWarmupSet(set.reps, set.weight);
       } else {
-        exercise.addWorkingSet(reps, weight);
+        exercise.addWorkingSet(set.reps, set.weight);
       }
-    }
+    });
 
     return exercise;
+  }
+
+  #extractSetsFromRequest(req) {
+    // Makes sure that the request body is an array, to handle single and multiple sets.
+    const setTypes = Array.isArray(req.body['setTypes']) ? req.body['setTypes'] : [req.body['setTypes']];
+    const weights = Array.isArray(req.body['weights']) ? req.body['weights'] : [req.body['weights']];
+    const repsList = Array.isArray(req.body['reps']) ? req.body['reps'] : [req.body['reps']];
+
+    const sets = [];
+    for (let i = 0; i < setTypes.length; i++) {
+      sets.push({
+        type: setTypes[i],
+        weight: parseFloat(weights[i]),
+        reps: parseInt(repsList[i])
+      });
+    }
+
+    return sets;
   }
 
 }
