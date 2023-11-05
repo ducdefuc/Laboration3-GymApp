@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Confirm Delete </title>
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/gym-app/css/style.css">
 </head>
 
 <body>
@@ -14,12 +14,12 @@
     <%= workout.name %>
   </h2>
 
-  <form action="/deleteWorkout/<%= workout.name %>" method="POST">
+  <form action="/gym-app/deleteWorkout/<%= workout.name %>" method="POST">
     <input type="hidden" name="workoutName" value="<%= workout.name  %>">
     <button type="submit">Confirm Deletion</button>
   </form>
 
-  <a href="/listAllWorkouts/<%= workout.name %>" id="backToWorkoutButton" class="button-style">Cancel</a>
+  <a href="/gym-app/listAllWorkouts/<%= workout.name %>" id="backToWorkoutButton" class="button-style">Cancel</a>
 </body>
 
 </html>

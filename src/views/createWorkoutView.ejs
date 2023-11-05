@@ -5,19 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Create Workout</title>
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/gym-app/css/style.css">
 </head>
 
 <body>
   <h1>Create a Workout</h1>
   <p>What do you want to call this workout?</p>
-  <form method="POST" action="/createWorkout/create">
+  <form method="POST" action="/gym-app/createWorkout/create">
     <input type="text" id="createWorkoutName" name="workoutName" placeholder="Workout Name"> <br>
     <button type="submit">Create Workout</button>
   </form>
   <p id="eventUpdateLabel"></p>
 
-  <a href="/" id="backToHomeButton" class="button-style">Back to home</a>
+  <a href="/gym-app/" id="backToHomeButton" class="button-style">Back to home</a>
 </body>
 
 </html>

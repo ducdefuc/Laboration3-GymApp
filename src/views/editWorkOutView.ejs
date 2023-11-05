@@ -7,7 +7,7 @@
   <title>
     <%= workout.name %>
   </title>
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/gym-app/css/style.css">
 </head>
 
 <body>
@@ -34,13 +34,15 @@
             </div>
             <% }) %>
 
-              <a href="removeExercise/<%= workout.name %>/<%= exercise.name %>" id="removeExerciseButton"
-                class="button-style">Remove Exercise</a>
+              <a href="/gym-app/editWorkout/removeExercise/<%= workout.name %>/<%= exercise.name %>"
+                id="removeExerciseButton" class="button-style">Remove Exercise</a>
     </div>
     <% }) %>
-      <a href="addExercise/<%= workout.name %>" id="addExerciseButton" class="button-style">Add Exercise</a>
+      <a href="/gym-app/editWorkout/addExercise/<%= workout.name %>" id="addExerciseButton" class="button-style">Add
+        Exercise</a>
       <br>
-      <a href="/listAllWorkouts/<%= workout.name %>" id="backToWorkoutButton" class="button-style">Back to workout</a>
+      <a href="/gym-app/listAllWorkouts/<%= workout.name %>" id="backToWorkoutButton" class="button-style">Back to
+        workout</a>
 </body>
 
 </html>

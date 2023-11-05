@@ -21,6 +21,6 @@ export default class deleteWorkoutController {
   }
 
   #redirectToWorkoutsList(res) {
-    res.redirect("/listAllWorkouts");
+    res.redirect("/gym-app/listAllWorkouts");
   }
 }

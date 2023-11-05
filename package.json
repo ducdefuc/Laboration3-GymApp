@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "dotenv": "^16.3.1",
     "ejs": "^3.1.9",
     "express": "^4.18.2"
   },
@@ -23,3 +24,4 @@
   },
   "homepage": "https://github.com/ducdefuc/L3-GymApp#readme"
 }
+  

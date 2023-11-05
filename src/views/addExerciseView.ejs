@@ -7,8 +7,8 @@
   <title>
     <%= workout.name %>
   </title>
-  <script src="/js/exerciseHandler.js"></script>
-  <link rel="stylesheet" href="/css/style.css">
+  <script src="/gym-app/js/exerciseHandler.js"></script>
+  <link rel="stylesheet" href="/gym-app/css/style.css">
 </head>
 
 <body>
@@ -16,7 +16,7 @@
     Adding exercise to: <%= workout.name %>
   </h1>
 
-  <form action="/editWorkout/addExercise/<%= workout.name %>" method="POST">
+  <form action="/gym-app/editWorkout/addExercise/<%= workout.name %>" method="POST">
     <div>
       <label for="exerciseName">Exercise Name:</label>
       <input type="text" id="exerciseName" name="exerciseName" placeholder="Enter Name" required>
@@ -41,7 +41,7 @@
     </div>
   </form>
 
-  <a href="/editWorkout/<%= workout.name %>" id="backToEditWorkoutButton" class="button-style">Back to edit workout</a>
+  <a href="/gym-app/editWorkout/<%= workout.name %>" id="backToEditWorkoutButton" class="button-style">Back to edit workout</a>
 </body>
 
 </html>

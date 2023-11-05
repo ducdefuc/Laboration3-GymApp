@@ -43,7 +43,7 @@ export default class editWorkoutController {
   }
 
   #redirectToEditPage(res, workoutName) {
-    res.redirect(`/editWorkout/${workoutName}`);
+    res.redirect(`/gym-app/editWorkout/${workoutName}`);
   }
 
   #createExerciseFromRequest(req) {

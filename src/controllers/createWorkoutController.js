@@ -20,6 +20,6 @@ export default class createWorkoutController {
   }
 
   #redirectToHomePage(res) {
-    res.redirect("/");
+    res.redirect("/gym-app/");
   }
 }
