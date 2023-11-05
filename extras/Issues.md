@@ -53,7 +53,7 @@ NFR1.1: The application code shall adhere to clean code principles.
 
 NFR1.2: The application shall be developed using object-oriented programming principles to promote reusability and modularity.
 
-NFR2: The user should be able to access the code over the internet.
+NFR2: The user should be able to access the application over the internet.
 
 # Vision
 
