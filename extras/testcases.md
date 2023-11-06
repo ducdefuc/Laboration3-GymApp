@@ -11,3 +11,5 @@
 ### Output
 
 - The home page is displayed with a greeting message and different options to choose
+
+[testcase1](./images/testcase1.png)
