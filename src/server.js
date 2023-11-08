@@ -16,7 +16,7 @@ try {
   app.set('views', join(currentDirectory, 'views'));
   app.use(express.urlencoded({ extended: false }));
 
-  const gymLibrary = new GymLibrary();
+  const gymLibrary = new GymLibrary();z
   const mainRouterInstance = new mainRouter(gymLibrary).getRouter();
 
   app.use('/gym-app', mainRouterInstance);
